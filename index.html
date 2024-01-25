@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <?php
+    include("header.php");
+    ?>
+<div class="contain">
+     <div class="container">
+         <h1>Create Account</h1>
+         <p id="item" class="alert"></p>
+         <form action="login.php" method="post" onsubmit="return validateForm()">
+              <div>
+            <i class="fa-solid fa-user" style="color: #ffffff;" id="cdn"></i>
+        <input type="text" placeholder=" Enter Fullname" id="fullname" name="name"><br>
+     </div>
+
+     <div>
+        <i class="fa-solid fa-envelope" style="color: #ffffff;" id="cdn"></i>
+     <input type="email" placeholder=" Enter Email" id="email" name="email"><br>
+     </div>
+        <div>
+              <i class="fa-solid fa-lock" style="color: #ffffff;" id="cdn"></i>
+              <input type="password" placeholder=" Enter Password" id="password" name="password"><br>
+        </div>
+        <div>
+     <i class="fa-solid fa-lock" style="color: #ffffff;" id="cdn"></i>
+      <input type="password" placeholder=" Retype your Password" id="password1" name="password1"><br>
+        </div>
+        <p id="msg" class="alert"></p>
+      <h4><input type="checkbox" id="chk-bx">I agree all statements in <a href="">Terms of service</a></h4>
+
+      <button type="submit" name="save">Sign Up</button>
+      <h3>Already have an account ?<a href="login.html">log in</a></h3>
+       </form>
+    </div>
+    </div>
+    <script>
+        function validateForm()
+        {
+            var a=document.getElementById("fullname").value;
+            var b=document.getElementById("email").value;
+            var c=document.getElementById("password").value;
+            var d=document.getElementById("password1").value;
+            var u=document.getElementById("chk-bx");
+            if(a=="" && b=="" && c=="")
+            {
+                document.getElementById("item").innerHTML="You must complete all required fields!!!";
+                return false;
+            }
+            else
+            {
+                document.getElementById("item").innerHTML="";
+            }
+            if(a=="")
+            {
+                document.getElementById("item").innerHTML="You must complete all required fields!!!";
+                return false;
+            }
+            else
+            {
+                document.getElementById("item").innerHTML="";
+            }
+            
+            if(b=="")
+            {
+                document.getElementById("item").innerHTML="You must complete all required fields!!!";
+                return false;
+            }
+            else
+            {
+                document.getElementById("item").innerHTML="";
+            }
+            if(c=="")
+            {
+                document.getElementById("item").innerHTML="You must complete all required fields!!!";
+                return false;
+            }
+            else
+            {
+                document.getElementById("item").innerHTML="";
+            }
+            if (d!=c)
+            {
+                document.getElementById("item").innerHTML="Passwords didnot match!!!";
+                return false;
+            }
+            if(!u.checked)
+            {
+                document.getElementById("msg").innerHTML="You must agree with out terms & conditions!!";
+                return false;
+            }
+
+        }
+    </script>
+</body>
+</html>
